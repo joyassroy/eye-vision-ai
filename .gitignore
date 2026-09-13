@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+backend/uploads/
+backend/results/
+
+# Backend runtime files
+backend/*.log
+backend/__pycache__/
+backend/venv/
+
+# Large model weights (Exceeds GitHub 100MB limit)
+public/WEBSITE_MODEL/best_model.pth
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

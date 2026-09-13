@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --navy-950: #04111f;
+    --navy-900: #0a1b31;
+    --navy-800: #102847;
+    --sky-600: #0284c7;
+    --sky-500: #0ea5e9;
+    --cyan-400: #22d3ee;
+    --slate-50: #f7fbff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen text-slate-700 antialiased;
+    font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(34, 211, 238, 0.16), transparent 24%),
+      radial-gradient(circle at 80% 8%, rgba(14, 165, 233, 0.14), transparent 22%),
+      radial-gradient(circle at 85% 78%, rgba(15, 23, 42, 0.08), transparent 18%),
+      linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: rgba(15, 23, 42, 0.15);
+    color: #0f172a;
+  }
+
+  :focus-visible {
+    outline: 2px solid #0f172a;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-2xl border border-white/70 bg-white/90 shadow-soft backdrop-blur;
+    box-shadow: 0 18px 50px -24px rgba(2, 6, 23, 0.28);
+  }
+
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-heading {
+    @apply text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl;
+  }
+
+  .section-copy {
+    @apply mt-3 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base;
+  }
+
+  .card-title {
+    @apply text-lg font-semibold text-slate-900;
+  }
+
+  .muted-label {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-sky-700;
+  }
+
+  .subtle-grid {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .hero-gradient {
+    background:
+      radial-gradient(circle at top left, rgba(34, 211, 238, 0.18), transparent 30%),
+      radial-gradient(circle at top right, rgba(14, 165, 233, 0.16), transparent 26%),
+      linear-gradient(135deg, #07111f 0%, #0b1c33 52%, #12345a 100%);
+  }
+
+  .metric-chip {
+    @apply rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm;
+  }
+
+  .ambient-orb {
+    @apply absolute rounded-full blur-3xl pointer-events-none;
+    animation: floatOrb 14s ease-in-out infinite;
+  }
+
+  .ambient-orb.delay {
+    animation-delay: -6s;
+  }
+
+  .fade-up {
+    animation: fadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .fade-up-delay-1 {
+    animation-delay: 120ms;
+  }
+
+  .fade-up-delay-2 {
+    animation-delay: 220ms;
+  }
+
+  .fade-up-delay-3 {
+    animation-delay: 320ms;
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
+    animation: shimmer 1.9s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.04);
+  }
+}
+
+/* Custom scrollbar for epoch timeline */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}

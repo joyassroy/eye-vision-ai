@@ -1,0 +1,17 @@
+export const DEFAULT_CLASSES = [
+  'Cataract',
+  'Conjunctival cyst',
+  'Conjunctival injection',
+  'Corneal / Conjunctival tumor',
+  'Corneal dystrophy',
+  'Corneal scarring',
+  'Intraocular lens',
+  'Keratitis',
+  'Lens dislocation',
+  'Lens dislocation/Cataract',
+  'Normal',
+  'Pigmented nevus',
+  'Pinguecula',
+  'Pterygium',
+  'Subconjunctival hemorrhage',
+]
