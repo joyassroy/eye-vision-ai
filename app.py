@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath("backend"))
+
 import gradio as gr
 from backend.main import app as fastapi_app
 
