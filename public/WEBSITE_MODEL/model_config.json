@@ -1,0 +1,42 @@
+{
+    "model_name": "efficientnet_v2_m",
+    "image_size": 224,
+    "num_classes": 15,
+    "classes": [
+        "Cataract",
+        "Conjunctival cyst",
+        "Conjunctival injection",
+        "Corneal / Conjunctival tumor",
+        "Corneal dystrophy",
+        "Corneal scarring",
+        "Intraocular lens",
+        "Keratitis",
+        "Lens dislocation",
+        "Lens dislocation/Cataract",
+        "Normal",
+        "Pigmented nevus",
+        "Pinguecula",
+        "Pterygium",
+        "Subconjunctival hemorrhage"
+    ],
+    "dropout": 0.3,
+    "freeze_backbone": false,
+    "learning_rate": 0.0007445693494204674,
+    "optimizer": "RMSprop",
+    "batch_size": 16,
+    "weight_decay": 0.0002584590795054865,
+    "epochs": 20,
+    "best_validation_loss": 0.08534145992642371,
+    "normalization": {
+        "mean": [
+            0.485,
+            0.456,
+            0.406
+        ],
+        "std": [
+            0.229,
+            0.224,
+            0.225
+        ]
+    }
+}
