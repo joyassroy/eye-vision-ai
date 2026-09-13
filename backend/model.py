@@ -201,11 +201,12 @@ def load_model_bundle() -> ModelBundle:
         raise FileNotFoundError(f"Model checkpoint not found: {model_path}")
 
     try:
-        checkpoint = torch.load(model_path, map_location=device, weights_only=True)
-    except TypeError:
-        checkpoint = torch.load(model_path, map_location=device)
+        checkpoint = torch.load(model_path, map_location=device, weights_only=True, mmap=True)
     except Exception:
-        checkpoint = torch.load(model_path, map_location=device)
+        try:
+            checkpoint = torch.load(model_path, map_location=device, weights_only=True)
+        except Exception:
+            checkpoint = torch.load(model_path, map_location=device)
 
     state_dict = extract_state_dict(checkpoint)
     if state_dict is None:
@@ -214,6 +215,12 @@ def load_model_bundle() -> ModelBundle:
     state_dict = _strip_module_prefix(state_dict)
 
     load_state_dict_flexibly(model, state_dict)
+    
+    # Aggressive memory cleanup for 512MB environments like Render
+    del state_dict
+    del checkpoint
+    import gc
+    gc.collect()
 
     model.to(device)
     model.eval()
