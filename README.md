@@ -1,3 +1,14 @@
+---
+title: Eye Vision AI
+emoji: 👁️
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 4.44.0
+app_file: app.py
+pinned: false
+---
+
 # EyeVision AI: Multi-Label Ocular Lesion Detection System
 
 EyeVision AI is a highly optimized, automated deep learning system designed for the simultaneous detection of 15 different anterior segment eye diseases from slit-lamp images. This project was developed as a Final Year Design Project at Daffodil International University by Dipta Acharjee and Joyassroy Barua.
