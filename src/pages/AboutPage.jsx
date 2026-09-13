@@ -22,7 +22,7 @@ const team = [
       'Built the interactive, fully responsive frontend with dynamic UI animations',
       'Authored comprehensive research documentation & handled cloud deployment',
     ],
-    skills: ['Python', 'PyTorch', 'React', 'Node.js', 'FastAPI', 'C++'],
+    skills: ['Python', 'PyTorch', 'Next.js', 'React', 'Node.js', 'Express', 'MongoDB', 'FastAPI'],
   },
   {
     name: 'Dipta Acharjee',
@@ -40,7 +40,7 @@ const team = [
       'Built high-performance FastAPI backend with integrated Grad-CAM serving',
       'Connected end-to-end full-stack API integration for real-time inferences',
     ],
-    skills: ['JavaScript', 'React', 'Next.js', 'Node.js', 'MongoDB', 'Express'],
+    skills: ['Python', 'PyTorch', 'Next.js', 'React', 'Node.js', 'Express', 'MongoDB', 'FastAPI'],
   },
 ]
 
