@@ -8,11 +8,11 @@ from backend.main import app as fastapi_app
 
 @spaces.GPU
 def dummy_gpu_function():
-    pass
+    return "EyeVision AI API Backend is running successfully on ZeroGPU!"
 
-# Create a simple Gradio interface just to satisfy Hugging Face's requirements
+# Create a simple Gradio interface using the GPU-decorated function
 demo = gr.Interface(
-    fn=lambda: "EyeVision AI API Backend is running successfully!",
+    fn=dummy_gpu_function,
     inputs=None,
     outputs="text",
     title="EyeVision AI Backend"
