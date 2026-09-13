@@ -3,7 +3,12 @@ import os
 sys.path.append(os.path.abspath("backend"))
 
 import gradio as gr
+import spaces
 from backend.main import app as fastapi_app
+
+@spaces.GPU
+def dummy_gpu_function():
+    pass
 
 # Create a simple Gradio interface just to satisfy Hugging Face's requirements
 demo = gr.Interface(
